@@ -11,30 +11,30 @@ services:
   backend-user:
     image: pradeeppaidock/udagram-users-api
     environment:
-      POSTGRES_USERNAME: udagrampaidb
-      POSTGRES_PASSWORD: Clijsters32
-      POSTGRES_DB: udagrampaidb 
-      POSTGRES_HOST: udagrampaidb.cb7zphooz3xh.us-east-1.rds.amazonaws.com
-      AWS_REGION: us-east-1
+      POSTGRES_USERNAME: hidden
+      POSTGRES_PASSWORD: hidden
+      POSTGRES_DB: hidden 
+      POSTGRES_HOST: hidden
+      AWS_REGION: hidden
       AWS_PROFILE: default 
-      AWS_BUCKET: udagrampaidev
+      AWS_BUCKET: hidden
       JWT_SECRET: hello
       URL: "http://localhost:8100"
   backend-feed:
-    image: pradeeppaidock/udagram-feed-api
+    image: hidden
     volumes:
       - $HOME/.aws:/root/.aws
     environment:
-      POSTGRES_USERNAME: udagrampaidb
-      POSTGRES_PASSWORD: Clijsters32
-      POSTGRES_DB: udagrampaidb 
-      POSTGRES_HOST: udagrampaidb.cb7zphooz3xh.us-east-1.rds.amazonaws.com
+      POSTGRES_USERNAME: hidden
+      POSTGRES_PASSWORD: hidden
+      POSTGRES_DB: hidden 
+      POSTGRES_HOST: hidden
       AWS_REGION: us-east-1
       AWS_PROFILE: default 
-      AWS_BUCKET: udagrampaidev
+      AWS_BUCKET: hidden
       JWT_SECRET: hello
       URL: "http://localhost:8100"
   frontend:
-    image: pradeeppaidock/udagram-frontend
+    image: hidden
     ports:
       - "8100:80"
