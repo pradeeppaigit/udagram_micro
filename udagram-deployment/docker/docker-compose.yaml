@@ -11,10 +11,10 @@ services:
   backend-user:
     image: pradeeppaidock/udagram-users-api
     environment:
-      POSTGRESS_USERNAME: udagrampaidb
-      POSTGRESS_PASSWORD: Clijsters32
-      POSTGRESS_DB: postgres 
-      POSTGRESS_HOST: udagrampaidb.cb7zphooz3xh.us-east-1.rds.amazonaws.com
+      POSTGRES_USERNAME: udagrampaidb
+      POSTGRES_PASSWORD: Clijsters32
+      POSTGRES_DB: udagrampaidb 
+      POSTGRES_HOST: udagrampaidb.cb7zphooz3xh.us-east-1.rds.amazonaws.com
       AWS_REGION: us-east-1
       AWS_PROFILE: default 
       AWS_BUCKET: udagrampaidev
@@ -25,10 +25,10 @@ services:
     volumes:
       - $HOME/.aws:/root/.aws
     environment:
-      POSTGRESS_USERNAME: udagrampaidb
-      POSTGRESS_PASSWORD: Clijsters32
-      POSTGRESS_DB: postgres 
-      POSTGRESS_HOST: udagrampaidb.cb7zphooz3xh.us-east-1.rds.amazonaws.com
+      POSTGRES_USERNAME: udagrampaidb
+      POSTGRES_PASSWORD: Clijsters32
+      POSTGRES_DB: udagrampaidb 
+      POSTGRES_HOST: udagrampaidb.cb7zphooz3xh.us-east-1.rds.amazonaws.com
       AWS_REGION: us-east-1
       AWS_PROFILE: default 
       AWS_BUCKET: udagrampaidev
