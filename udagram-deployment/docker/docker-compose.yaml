@@ -1,0 +1,40 @@
+version: "3"
+services:
+  reverseproxy:
+      image: pradeeppaidock/reverseproxy
+      ports:
+          - 8080:8080
+      restart: always
+      depends_on:
+        - backend-user
+        - backend-feed     
+  backend-user:
+    image: pradeeppaidock/udagram-users-api
+    environment:
+      POSTGRESS_USERNAME: udagrampaidb
+      POSTGRESS_PASSWORD: Clijsters32
+      POSTGRESS_DB: postgres 
+      POSTGRESS_HOST: udagrampaidb.cb7zphooz3xh.us-east-1.rds.amazonaws.com
+      AWS_REGION: us-east-1
+      AWS_PROFILE: default 
+      AWS_BUCKET: udagrampaidev
+      JWT_SECRET: hello
+      URL: "http://localhost:8100"
+  backend-feed:
+    image: pradeeppaidock/udagram-feed-api
+    volumes:
+      - $HOME/.aws:/root/.aws
+    environment:
+      POSTGRESS_USERNAME: udagrampaidb
+      POSTGRESS_PASSWORD: Clijsters32
+      POSTGRESS_DB: postgres 
+      POSTGRESS_HOST: udagrampaidb.cb7zphooz3xh.us-east-1.rds.amazonaws.com
+      AWS_REGION: us-east-1
+      AWS_PROFILE: default 
+      AWS_BUCKET: udagrampaidev
+      JWT_SECRET: hello
+      URL: "http://localhost:8100"
+  frontend:
+    image: pradeeppaidock/udagram-frontend
+    ports:
+      - "8100:80"
